@@ -28,9 +28,10 @@ function App() {
       <div>Variant: {`${variant}`}</div>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>
+          {variant === '0' && ('You see original page version.')}
+          {variant === '1' && ('You see <strong>NEW</strong> page version.')}
+        </h1>
         <a
           className="App-link"
           href="https://reactjs.org"
