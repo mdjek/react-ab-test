@@ -24,9 +24,9 @@ function App() {
   }, []);
 
   return (
-    <div className="App">      
+    <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={logo} className={`App-logo${variant === '1' ? ' App-logo--x' : ''}`} alt="logo" />
         <h1>
           {variant === '0' && 'You see ORIGINAL version page'}
           {variant === '1' && <>You see <i>NEW</i> version page</>}
