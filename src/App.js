@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const [variant, setVariant] = useState(0);
+  const [variant, setVariant] = useState('0');
 
   useEffect(() => {
     async function abTest() {
