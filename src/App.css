@@ -26,6 +26,11 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  transition: opacity 0.3s;
+}
+
+.App-header-hide {
+  opacity: 0 !important;
 }
 
 .App-link {

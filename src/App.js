@@ -4,7 +4,7 @@ import logoGreen from './logoGreen.svg';
 import './App.css';
 
 function App() {
-  const [variant, setVariant] = useState('0');
+  const [variant, setVariant] = useState(null);
 
   useEffect(() => {
     async function abTest() {
@@ -12,11 +12,16 @@ function App() {
         await window.dataLayer.push({ event: 'optimize.activate' });
       }
 
+      const showContent = setTimeout(()=> {
+        setVariant('0');
+      }, 1000);
+
       const intervalId = setInterval(() => {
         if (window.google_optimize !== undefined) {
           const variant = window.google_optimize.get('o30slX_MQROZiJYFguu9Mg');
           setVariant(variant);
           clearInterval(intervalId);
+          clearTimeout(showContent);
         }
       }, 100);
     }
@@ -26,7 +31,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header className={`App-header ${!variant ? 'App-header-hide' : ''}`}>
         {variant === '1'
           ? <img src={logoGreen} className="App-logo App-logo--revert" alt="logo-green" />
           : <img src={logo} className="App-logo" alt="logo" />
