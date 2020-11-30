@@ -4,9 +4,9 @@ import './App.css';
 
 function App() {
   const [variant, setVariant] = useState(0);
-  
+
   useEffect(() => {
-    (async function abTest() {      
+    (async function abTest() {
       if (window.dataLayer) {
         await window.dataLayer.push({ event: 'optimize.activate' });
       }
@@ -18,12 +18,12 @@ function App() {
         }
     }, 100);
     })();
-  });
-  
+  }, []);
+
   return (
     <div className="App">
       <div>Variant: {`${variant}`}</div>
-      <header className="App-header">        
+      <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
