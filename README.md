@@ -1,8 +1,6 @@
+# React a/b test [![Build Status](https://travis-ci.com/mdjek/react-ab-test.svg?branch=main)](https://travis-ci.com/mdjek/react-ab-test)
+
 Demo: https://mdjek.github.io/react-ab-test/
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
