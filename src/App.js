@@ -28,8 +28,8 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>
-          {variant === '0' && 'You see ORIGINAL version page.'}
-          {variant === '1' && <>You see <strong>NEW</strong> version page.</>}
+          {variant === '0' && 'You see ORIGINAL version page'}
+          {variant === '1' && <>You see <i>NEW</i> version page</>}
         </h1>
         <a
           className="App-link"
