@@ -6,19 +6,35 @@ function App() {
   const [variant, setVariant] = useState(0);
 
   useEffect(() => {
-    (async function abTest() {
+    async function abTest() {
       if (window.dataLayer) {
         await window.dataLayer.push({ event: 'optimize.activate' });
       }
-      const intervalId = setInterval(() => {
+
+      this.intervalId = setInterval(() => {
         if (window.google_optimize !== undefined) {
           const variant = window.google_optimize.get('o30slX_MQROZiJYFguu9Mg');
-          console.log(variant);
           setVariant({ variant });
-          clearInterval(intervalId);
+          clearInterval(this.intervalId);
         }
-    }, 100);
-    })();
+      }, 100);
+    }
+
+    abTest();
+
+    // (async function abTest() {
+    //   if (window.dataLayer) {
+    //     await window.dataLayer.push({ event: 'optimize.activate' });
+    //   }
+    //   const intervalId = setInterval(() => {
+    //     if (window.google_optimize !== undefined) {
+    //       const variant = window.google_optimize.get('o30slX_MQROZiJYFguu9Mg');
+    //       console.log(variant);
+    //       setVariant({ variant });
+    //       clearInterval(intervalId);
+    //     }
+    // }, 100);
+    // })();
   }, []);
 
   return (
