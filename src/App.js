@@ -10,11 +10,11 @@ function App() {
       if (window.dataLayer) {
         await window.dataLayer.push({ event: 'optimize.activate' });
       }
-      this.intervalId = setInterval(() => {
+      const intervalId = setInterval(() => {
         if (window.google_optimize !== undefined) {
           const variant = window.google_optimize.get('o30slX_MQROZiJYFguu9Mg');
           setVariant({ variant });
-          clearInterval(this.intervalId);
+          clearInterval(intervalId);
         }
     }, 100);
     })();
