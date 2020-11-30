@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const [variant, setVariant] = useState(0);
+  const [variant, setVariant] = useState('0');
 
   useEffect(() => {
     async function abTest() {
@@ -24,13 +24,13 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <div>Variant: {`${variant}`}</div>
+    <div className="App">      
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>
+          {variant === '0' && 'You see ORIGINAL version page'}
+          {variant === '1' && <>You see <i>NEW</i> version page</>}
+        </h1>
         <a
           className="App-link"
           href="https://reactjs.org"
