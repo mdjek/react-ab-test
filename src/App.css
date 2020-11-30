@@ -12,8 +12,8 @@
     animation: App-logo-spin infinite 20s linear;
   }
 
-  .App-logo.App-logo--x {
-    animation: App-logo-spin infinite 20s linear, App-logo-spin-x infinite 20s linear;
+  .App-logo--revert {
+    animation: App-logo-spin-revert infinite 15s linear;
   }
 }
 
@@ -42,11 +42,11 @@
 }
 
 
-@keyframes App-logo-spin-x {
+@keyframes App-logo-spin-revert {
   from {
-    transform: rotateX(0deg);
+    transform: rotate(0deg);
   }
   to {
-    transform: rotateX(360deg);
+    transform: rotate(-360deg);
   }
 }

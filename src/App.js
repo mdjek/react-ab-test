@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
+import logoGreen from './logoGreen.svg';
 import './App.css';
 
 function App() {
@@ -26,10 +27,15 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className={`App-logo${variant === '1' ? ' App-logo--x' : ''}`} alt="logo" />
+        {variant === '1'
+          ? <img src={logoGreen} className="App-logo App-logo--revert" alt="logo-green" />
+          : <img src={logo} className="App-logo" alt="logo" />
+        }
         <h1>
-          {variant === '0' && 'You see ORIGINAL version page'}
-          {variant === '1' && <>You see <i>NEW</i> version page</>}
+          {variant === '1'
+            ? 'You see NEW version page'
+            : 'You see ORIGINAL version page'
+          }
         </h1>
         <a
           className="App-link"
