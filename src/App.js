@@ -13,7 +13,7 @@ function App() {
       this.intervalId = setInterval(() => {
         if (window.google_optimize !== undefined) {
           const variant = window.google_optimize.get('o30slX_MQROZiJYFguu9Mg');
-          this.setState({ variant });
+          setVariant({ variant });
           clearInterval(this.intervalId);
         }
     }, 100);
