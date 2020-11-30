@@ -14,7 +14,6 @@ function App() {
       const intervalId = setInterval(() => {
         if (window.google_optimize !== undefined) {
           const variant = window.google_optimize.get('o30slX_MQROZiJYFguu9Mg');
-          console.log(variant);
           setVariant({ variant });
           clearInterval(intervalId);
         }
@@ -37,6 +36,8 @@ function App() {
     // }, 100);
     // })();
   }, []);
+
+  console.log(variant);
 
   return (
     <div className="App">
