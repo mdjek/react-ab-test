@@ -13,13 +13,16 @@ function App() {
       }
 
       const showContent = setTimeout(()=> {
+        clearInterval(intervalId);
         setVariant('0');
-      }, 1000);
+      }, 1500);
 
       const intervalId = setInterval(() => {
-        if (window.google_optimize !== undefined) {
-          const variant = window.google_optimize.get('o30slX_MQROZiJYFguu9Mg');
-          setVariant(variant);
+        const EXPERIMENT_ID = 'o30slX_MQROZiJYFguu9Mg';
+        const currentVariant = window.google_optimize && window.google_optimize.get(EXPERIMENT_ID);
+
+        if (currentVariant) {
+          setVariant(currentVariant);
           clearInterval(intervalId);
           clearTimeout(showContent);
         }
